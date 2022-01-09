@@ -115,8 +115,8 @@ namespace Tomino
         {
             piece = pieceProvider.GetPiece();
 
-            var offsetRow = top - piece.Top;
-            var offsetCol = (width - piece.Width) / 2;
+            var offsetRow = 10;
+            var offsetCol = 4;
 
             foreach (var block in piece.blocks)
             {

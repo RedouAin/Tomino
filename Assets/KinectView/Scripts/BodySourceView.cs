@@ -135,14 +135,13 @@ public class BodySourceView : MonoBehaviour
 
             if (_BoneMap.ContainsKey(jt)) {
                 targetJoint = body.Joints[_BoneMap[jt]];
-                Debug.Log(targetJoint);
+                
             }
 
             Transform jointObj = bodyObject.transform.Find(jt.ToString());
             jointObj.localPosition = GetVector3FromJoint(sourceJoint);
 
-            Debug.Log("localpos: " + jointObj.localPosition);
-            Debug.Log("jointObj gameobject name: " + jointObj.gameObject.name);
+
 
 
 
@@ -155,6 +154,13 @@ public class BodySourceView : MonoBehaviour
             else {
                 lr.enabled = false;
             }
+
+
+            if (jt == Kinect.JointType.HandLeft ||jt == Kinect.JointType.HandRight) {
+                Debug.Log("jointObj gameobject name: " + jointObj.gameObject.name);
+                Debug.Log("localpos: " + jointObj.localPosition);
+            }
+
         }
     }
     
